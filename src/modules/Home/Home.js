@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import * as Yup from 'yup';
-import { Paper, TextField, Button, FormHelperText, FormControl } from '@material-ui/core';
+import { Paper, TextField, FormHelperText, FormControl } from '@material-ui/core';
 import { Formik } from 'formik';
 
 const Container = styled.div`
@@ -70,14 +70,13 @@ const isValid = v => v && v.match(/\d{2}\d{2}\d{2}\d{2}\d{2}/g);
 const validationSchema = () =>
   Yup.object().shape({
     result: Yup.string()
-      .required(`Campo obrigatório`)
-      .test(`result`, `Valor inválido`, resut => isValid(resut)),
+      .required(`Campo obrigatório!`)
+      .test(`result`, `Valor inválido!`, resut => isValid(resut)),
     bet: Yup.string()
-      .required(`Campo obrigatório`)
+      .required(`Campo obrigatório!`)
       .when([`result`], (result, schema) => {
-        return schema.max(result.length, `Aposta maior que o resultado informado`);
-      })
-      .test(`bet`, `Valor inválido`, bet => isValid(bet)),
+        return schema.max(result.length, `Aposta maior que o resultado informado!`);
+      }),
   });
 
 const RenderMessageError = ({ label, errors }) => {
