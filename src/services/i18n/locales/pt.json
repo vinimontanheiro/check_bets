@@ -1,0 +1,16 @@
+{
+  "login":{
+    "user": "Usuário",
+    "password": "Senha"
+  },
+  "language":{
+    "choose_language" : "Selecione o idioma",
+    "portuguese" : "Português",
+    "english": "Inglês",
+    "spanish": "Espanhol"
+  },
+  "error":{
+    "required_user": "Informe o usuário",
+    "required_password" : "Informe o password"
+  }
+}
